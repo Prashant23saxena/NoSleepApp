@@ -1,0 +1,23 @@
+# NoSleepApp
+> Zero-dependency native macOS menu-bar utility to keep closed-lid MacBooks awake for AI coding agents, torrents, and overnight workloads.
+
+## Project Summary
+NoSleepApp enables MacBooks (both Apple Silicon M1/M2/M3/M4 and Intel) to stay awake when the laptop lid is closed on battery power, without requiring an external monitor or AC adapter.
+
+## Key Features
+- Clamshell Sleep Prevention: Uses native system power assertions via `pmset -a disablesleep 1`.
+- Hardware Heat Elimination: Dims display backlight to 0% via private `DisplayServices.framework` C bindings (`DisplayServicesSetBrightness`).
+- Thermal & Battery Protection: Non-negotiable 5-hour safety auto-off timer and instant 20% battery cutoff via native `IOKit.ps` notifications.
+- Crash Recovery Reconciler: Detects dead owning PIDs on startup and restores normal sleep if the process was terminated unexpectedly.
+- Zero External Dependencies: Pure Swift 5.9 and C, compiling natively with clang/swiftc.
+
+## Documentation Index
+- [Architecture & Mechanics](docs/ARCHITECTURE.md): Native Apple power management architecture, IOKit telemetry, and security model.
+- [Design Specifications](docs/DESIGN_SPEC.md): UI/UX design tokens, typography, animations, and Orwellian copy rules.
+- [Reproduction Guide](docs/LLM_REPRODUCTION_GUIDE.md): Instructions and prompts for autonomous AI agents to recreate this project from scratch.
+- [Learning & User Feedback](learning_feedback/README.md): Archive of user critiques, bug reports, and codified rules for macOS systems development.
+
+## Installation Methods
+- Drag-and-drop DMG: `NoSleepApp.dmg`
+- Guided Installer Package: `NoSleepApp.pkg`
+- Build from Source: `./scripts/build_app.sh`
