@@ -1,0 +1,4 @@
+# NoSleepApp Build & Distribution Dependencies
+# Required only for generating DMG background art & applying Cocoa custom icons
+Pillow>=10.0.0
+pyobjc-framework-Cocoa>=9.0

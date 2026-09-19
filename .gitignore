@@ -1,0 +1,13 @@
+# macOS & Build Artifacts
+.DS_Store
+*.app/
+temp_*
+pkg_root/
+pkg_scripts/
+.original_brightness
+.nosleepapp_state.json
+
+# Cache
+__pycache__/
+*.pyc
+*.o
